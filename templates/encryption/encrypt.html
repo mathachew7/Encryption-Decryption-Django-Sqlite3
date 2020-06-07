@@ -1,0 +1,81 @@
+{% extends 'encryption/nav.html'%} {% block content %}
+<head>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <br />
+  <hr />
+  <br />
+  <h3 style="margin: auto; text-align: center; align-self: center;">
+    <u>Encryption</u>
+  </h3>
+  <br />
+  <hr />
+
+  <form method="POST">
+    {% csrf_token %}
+    <div class="container">
+      <div class="form-group">
+        <label for="secretKey"> Secret Message :</label>
+        <input
+          type="text"
+          class="form-control"
+          name="secretKey"
+          id="secretKey"
+          aria-describedby="secretMessage"
+        />
+        <small id="secret_key" class="form-text text-muted"
+          >We'll never share your Secret Key with anyone else.</small
+        >
+      </div>
+      <div class="form-group">
+        <label for="fileForEncrypt">Choose the file to Encrypt :</label>
+        <input
+          type="file"
+          class="form-control-file"
+          id="fileForEncrypt"
+          name="fileForEncrypt"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  <br />
+  <hr />
+
+  <div
+    class="content"
+    style="
+      width: 1000;
+      height: 250;
+      box-sizing: content-box;
+      text-decoration: aqua;
+      text-align: justify;
+      border: 5ch;
+      margin: auto;
+    "
+  >
+    <h4>Asymmetric Encryption :</h4>
+
+    In public-key encryption schemes, the encryption key is published for anyone
+    to use and for encrypting messages. Only the receiving party has access to
+    the decryption key that enables messages to be read. Public-key encryption
+    was first described in a secret document in 1973. Before that, all
+    encryption schemes were symmetric-key (also called private-key).
+    <br />
+    <h4>Encryption Algorithms :</h4>
+    RSA RSA is a public-key encryption algorithm and the standard for encrypting
+    data sent over the internet. It also happens to be one of the methods used
+    in PGP and GPG programs. Unlike Triple DES, RSA is considered an asymmetric
+    encryption algorithm because it uses a pair of keys. The public key is used
+    to encrypt a message and a private key to decrypt it. It takes attackers
+    quite a bit of time and processing power to break this encryption code.
+  </div>
+
+  {% endblock %}
+</head>

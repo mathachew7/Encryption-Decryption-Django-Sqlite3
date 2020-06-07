@@ -1,0 +1,67 @@
+{% extends 'encryption/nav.html'%} {% load static %}{% block content %}
+
+<head>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+  <style>
+    .body {
+      text-align: center;
+    }
+    .container {
+      align-items: center;
+    }
+  </style>
+</head>
+<br />
+<br />
+<hr />
+<br />
+
+<h3 style="margin: auto; text-align: center; align-self: center;">
+  <u>Decryption</u>
+</h3>
+<hr />
+
+<form method="POST">
+  {% csrf_token %}
+
+  <div class="container">
+    <label for="fileForDecrypt">Choose the file to Decrypt :</label>
+    <input
+      type="file"
+      class="form-control-file"
+      id="fileForDecrypt"
+      name="fileForDecrypt"
+    />
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+<br />
+<br />
+<div
+  class="content"
+  style="
+    width: 1000;
+    height: 250;
+    box-sizing: content-box;
+    text-decoration: aqua;
+    text-align: justify;
+    border: 5ch;
+    margin: auto;
+  "
+>
+  <h4>Asymmetric Encryption / Decryption :</h4>
+
+  Decryption is the process of taking encoded or encrypted text or other data
+  and converting it back into text that you or the computer can read and
+  understand. This term could be used to describe a method of unencrypting the
+  data manually or unencrypting the data using the proper codes or keys.
+  <br />
+</div>
+
+{% endblock %}

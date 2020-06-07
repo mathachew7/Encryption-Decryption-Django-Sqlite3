@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    crossorigin="anonymous"
+  />
+  <style>
+    input[type="text"],
+    select {
+      width: 50%;
+      padding: 12px 20px;
+      margin-left: 10rem;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="file"],
+    select {
+      width: 50%;
+      padding: 12px 20px;
+      margin-left: 10rem;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="email"],
+    select {
+      width: 50%;
+      padding: 12px 20px;
+      margin-left: 10rem;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="password"],
+    select {
+      width: 50%;
+      padding: 12px 20px;
+      margin-left: 10rem;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button[type="submit"] {
+      width: 25%;
+      background-color: #4caf50;
+      color: white;
+      padding: 14px 20px;
+      margin-left: 15rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    div {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    h3 {
+      text-align: center;
+      text-decoration: aqua;
+    }
+  </style>
+  <body style="background-color: rgb(54, 65, 61);">
+    <div
+      class="container"
+      style="
+        align-content: center;
+        margin-top: 6rem;
+        width: 45%;
+        background-color: rgb(139, 139, 99);
+      "
+    >
+      <h3>Register User</h3>
+
+      <hr />
+      <form method="POST">
+        {% csrf_token %}
+
+        <label for="name" style="margin-left: 10rem;">Name</label><br />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Full Name"
+        /><br />
+        <label for="email" style="margin-left: 10rem;">Email</label><br />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="name@mail.com"
+        /><br />
+        <label for="password" style="margin-left: 10rem;">Password</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+        /><br />
+        <label for="photo" style="margin-left: 10rem;">Photo</label><br />
+        <input type="file" id="photo" name="photo" /><br />
+        <br />
+        <button type="submit" value="Submit">Register</button>
+      </form>
+    </div>
+  </body>
+</html>

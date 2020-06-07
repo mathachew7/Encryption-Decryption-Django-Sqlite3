@@ -1,0 +1,92 @@
+{% extends 'encryption/nav.html'%} {% load static %} {% block content %}
+<head>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <div style="align-content: center;">
+    <br />
+    <h3 style="margin: auto; text-align: center; align-self: center;">
+      Digital Signature:
+    </h3>
+    <br />
+    <hr />
+    <div
+      class="content"
+      style="
+        width: 1000;
+        height: 200;
+        box-sizing: content-box;
+        text-decoration: aqua;
+        text-align: justify;
+        border: 5ch;
+        margin: auto;
+      "
+    >
+      Digital signatures are the public-key primitives of message
+      authentication. In the physical world, it is common to use handwritten
+      signatures on handwritten or typed messages. They are used to bind
+      signatory to the message. Similarly, a digital signature is a technique
+      that binds a person/entity to the digital data. This binding can be
+      independently verified by receiver as well as any third party. Digital
+      signature is a cryptographic value that is calculated from the data and a
+      secret key known only by the signer. In real world, the receiver of
+      message needs assurance that the message belongs to the sender and he
+      should not be able to repudiate the origination of that message. This
+      requirement is very crucial in business applications, since likelihood of
+      a dispute over exchanged data is very high.
+    </div>
+    <div class="image" style="
+        width: 1000;
+        height: 300;
+        display: flex;
+        padding: 2rem;
+        flex-direction: column;
+        align-content: center;
+        box-sizing: content-box;
+        text-decoration: aqua;
+        justify-content: center;
+        align-items: center;        
+        border: 5ch;
+        margin: auto;
+      "
+    >
+      <img src="{% static 'images/digital.jpg' %}" />
+      <p style="padding-top: 1rem; color: blueviolet;"><u><i>Process of encryption and decryption</i> </u></p>
+    </div>
+    <div
+      class="content"
+      style="
+        width: 1000;
+        height: 250;
+        box-sizing: content-box;
+        text-decoration: aqua;
+        text-align: justify;
+        border: 5ch;
+        margin: auto;
+      "
+    >
+      The following points explain the entire process in detail − Each person
+      adopting this scheme has a public-private key pair. Generally, the key
+      pairs used for encryption/decryption and signing/verifying are different.
+      The private key used for signing is referred to as the signature key and
+      the public key as the verification key. Signer feeds data to the hash
+      function and generates hash of data. Hash value and signature key are then
+      fed to the signature algorithm which produces the digital signature on
+      given hash. Signature is appended to the data and then both are sent to
+      the verifier. Verifier feeds the digital signature and the verification
+      key into the verification algorithm. The verification algorithm gives some
+      value as output. Verifier also runs same hash function on received data to
+      generate hash value. For verificconation, this hash value and output of
+      verification algorithm are compared. Based on the comparison result,
+      verifier decides whether the digital signature is valid. Since digital
+      signature is created by ‘private’ key of signer and no one else can have
+      this key; the signer cannot repudiate signing the data in future.
+    
+  </div>
+  {% endblock%}
+</head>

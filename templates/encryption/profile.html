@@ -1,0 +1,53 @@
+{% extends 'encryption/nav.html'%} {% load static %}{% block content %}
+<head>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <br />
+  <hr />
+  <br />
+
+  <h3 style="margin: auto; text-align: center; align-self: center;">
+    <u>Profile</u>
+  </h3>
+  <hr />
+  <br />
+  <div class="container">
+    <label for="Email">Email: </label>
+    {{data.email}}
+    <br />
+    <label for="Name">Name: </label>
+    {{data.name}}
+    <br />
+    <label for="Password">Password: </label>
+    {{data.password}}
+    <br />
+    <label for="Photo">Photo: </label>
+    <div
+      class="image"
+      style="
+        width: 1000;
+        height: 250;
+        flex-direction: column;
+        align-content: center;
+        box-sizing: content-box;
+        text-decoration: aqua;
+        border: 5ch;
+        margin: auto;
+      "
+    >
+      <img src="{% static 'images/admin.png' %}" />
+    </div>
+    <br />
+    <br />
+    <hr />
+    <a href="/logout" class="btn">Logout</a>
+  </div>
+
+  {% endblock%}
+</head>
